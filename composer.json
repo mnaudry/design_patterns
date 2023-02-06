@@ -1,0 +1,14 @@
+{
+    "name": "mnaudry/patterns",
+    "autoload": {
+        "psr-4": {
+            "Mnaudry\\Patterns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mnaudry"
+        }
+    ],
+    "require": {}
+}
