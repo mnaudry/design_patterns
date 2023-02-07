@@ -43,7 +43,7 @@ $messages = array(
 $dest = "mohamed@gmail.com";
 
 //gmail
-sendMessage(new EmailSenderGmail(),"zuri@gamil.com","yetu",$dest,$messages);
+sendMessage(new EmailSenderGmail(),"zuri@gmail.com","yetu",$dest,$messages);
 
 
 
