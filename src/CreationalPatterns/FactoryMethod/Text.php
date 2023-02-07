@@ -17,7 +17,7 @@ namespace Mnaudry\Patterns\CreationalPatterns\FactoryMethod;
 
     public function create()
     {
-        printf("Text file has been created successfully with data : %s",$this->data);
+        printf("Text file has been created successfully with data : %s\n",$this->data);
     }
 
  }

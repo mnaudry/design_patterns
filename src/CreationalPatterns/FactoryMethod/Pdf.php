@@ -13,12 +13,12 @@ class Pdf implements Page {
 
     public function setData(?string $data):void{
 
-        $this->$data = $data;
+        $this->data = $data;
     }
 
     public function create()
     {
-        printf("Pdf file has been created successfully with data : %s",$this->data);
+        printf("Pdf file has been created successfully with data : %s\n",$this->data);
     }
 
 }
