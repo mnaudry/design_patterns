@@ -1,14 +1,23 @@
 {
     "name": "mnaudry/patterns",
+    "license": "MIT",
+    "type": "project",
+    "keywords": ["design patterns","php"],
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Mnaudry\\Patterns\\": "src/"
         }
+    },
+    "require": {
+        "php": ">=8.1"
     },
     "authors": [
         {
             "name": "mnaudry"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "symfony/var-dumper": "^6.2"
+    }
 }
