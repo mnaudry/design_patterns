@@ -27,8 +27,13 @@ class MYSQLQueryBuilder implements SQLQueryBuilder {
  
     }
 
-    public function limit(int $start, int $offset): SQLQueryBuilder
+    public function limit(int $row , ?int $offset): SQLQueryBuilder
     {
+        if($this->query->type != 'select'){
+            throw new MYSQLQueryBuilderException("The query must be a select");
+        }
+        $this->query->limit ="LIMIT ".(!is_null($offset)?" $offset, ":"").$row;
+
         return $this;
     }
 
@@ -98,7 +103,7 @@ class MYSQLQueryBuilder implements SQLQueryBuilder {
       }
        
       if(isset($query->limit)){
-
+        $sql .=$query->limit;
       }
 
       $sql .= ";";

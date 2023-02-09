@@ -1,20 +1,28 @@
 <?php
 require_once __DIR__."/vendor/autoload.php";
 
+use Mnaudry\Patterns\CreationalPatterns\Builder\SQLQueryBuilder;
 use Mnaudry\Patterns\CreationalPatterns\Builder\MYSQLQueryBuilder;
+use Mnaudry\Patterns\CreationalPatterns\Builder\PostgresQueryBuilder;
 
-$query = new MYSQLQueryBuilder();
 
-$query->reset();
 
-$sql = $query->
+function buildQuery(SQLQueryBuilder $query){
+
+    $query->reset();
+
+    dump( $query->
        select('product',['name','description','createDate'])
        ->where('id',2,'=')
        ->where('product','banane','=')
        ->OrWhere('id',5,'<')
        ->OrWhere('id',10,'>')
-       ->OrWhere('description',10,'')
-       ->getSQL();
+       ->limit(4,5)
+       ->getSQL());
+    
+}
 
-dump($sql);
+buildQuery(new MYSQLQueryBuilder());
+buildQuery(new PostgresQueryBuilder());
+
 
