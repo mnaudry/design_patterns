@@ -24,5 +24,3 @@ function buildQuery(SQLQueryBuilder $query){
 
 buildQuery(new MYSQLQueryBuilder());
 buildQuery(new PostgresQueryBuilder());
-
-
